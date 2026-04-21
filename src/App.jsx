@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import profilImg from "./assets/img/profil-oussama-abakarim.png";
 
 const data = {
   name: "Oussama Abakarim",
@@ -354,7 +355,29 @@ export default function Portfolio() {
         <div className="glow" style={{ width: 500, height: 500, background: "#00d4aa", opacity: 0.06, top: -100, right: -100 }} />
         <div className="glow" style={{ width: 400, height: 400, background: "#7c6fff", opacity: 0.07, bottom: -50, left: "30%" }} />
 
-        <div style={{ maxWidth: 900, position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: 1100, position: "relative", zIndex: 1, display: "flex", alignItems: "center", gap: "clamp(40px, 6vw, 100px)", flexWrap: "wrap" }}>
+
+          {/* Photo */}
+          <FadeIn delay={0}>
+            <div style={{ flexShrink: 0, position: "relative" }}>
+              <div style={{
+                width: "clamp(160px, 22vw, 260px)",
+                height: "clamp(160px, 22vw, 260px)",
+                borderRadius: "50%",
+                overflow: "hidden",
+                border: "3px solid #00d4aa44",
+                boxShadow: "0 0 40px #00d4aa22",
+              }}>
+                <img src={profilImg} alt="Oussama Abakarim" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              </div>
+              <div style={{
+                position: "absolute", inset: -6, borderRadius: "50%",
+                border: "1px solid #7c6fff22", pointerEvents: "none",
+              }} />
+            </div>
+          </FadeIn>
+
+          <div style={{ flex: 1, minWidth: 280 }}>
           <FadeIn delay={0}>
             <div className="section-label">Développeur Full-Stack</div>
           </FadeIn>
@@ -399,6 +422,7 @@ export default function Portfolio() {
               ))}
             </div>
           </FadeIn>
+          </div>{/* end text column */}
         </div>
       </section>
 
